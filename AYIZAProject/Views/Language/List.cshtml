@@ -1,0 +1,93 @@
+﻿@model IEnumerable<AYIZAProject.Models.Language>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Enviornment
+            @*@Html.LabelFor(model => model.Name)*@
+            @*@Html.Label("AY_ENV_ID", "Enviornment")*@
+            @*@Html.DisplayNameFor(model => model.AY_ENV_ID, "Enviornment")*@
+        </th>
+        <th>
+            Language Code
+
+           @* @Html.DisplayNameFor(model => model.AY_F_LANG_CODE)*@
+        </th>
+        <th>
+            Language Text
+
+            @Html.DisplayNameFor(model => model.AY_F_LANG_TEXT)
+        </th>
+        <th>
+            Creation Date
+
+            @Html.DisplayNameFor(model => model.AY_F_CREATE_DATE)
+        </th>
+        <th>
+            Creation Time
+            @Html.DisplayNameFor(model => model.AY_F_CREATE_TIME)
+        </th>
+        <th>
+           
+
+            @Html.DisplayNameFor(model => model.AY_F_CREATED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AY_F_LAST_CHG_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AY_F_LAST_CNG_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AY_F_LAST_CHG_BY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_ENV_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_LANG_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_LANG_TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_CREATE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_CREATE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_CREATED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_LAST_CHG_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_LAST_CNG_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AY_F_LAST_CHG_BY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { Id = item.Id  }) |
+            @Html.ActionLink("Details", "Details", new { Id = item.Id, AY_ENV_ID = item.AY_ENV_ID.ToString() }) |
+            @Html.ActionLink("Delete", "Delete", new { Id = item.Id, AY_ENV_ID = item.AY_ENV_ID.ToString() })
+        </td>
+    </tr>
+}
+
+</table>

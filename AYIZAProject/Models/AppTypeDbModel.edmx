@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AYIZA_DBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApplicationType">
+          <Key>
+            <PropertyRef Name="AY_ENV_ID" />
+            <PropertyRef Name="AY_F_APPL_TYPE" />
+            <PropertyRef Name="AY_F_LANG_CODE" />
+          </Key>
+          <Property Name="AY_ENV_ID" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="AY_F_APPL_TYPE" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="AY_F_LANG_CODE" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="AY_F_APPL_TEXT" Type="char" MaxLength="70" />
+          <Property Name="AY_F_CREATE_DATE" Type="char" MaxLength="8" />
+          <Property Name="AY_F_CREATE_TIME" Type="char" MaxLength="6" />
+          <Property Name="AY_F_CREATED_BY" Type="char" MaxLength="70" />
+          <Property Name="AY_F_LAST_CHG_DATE" Type="char" MaxLength="8" />
+          <Property Name="AY_F_LAST_CNG_TIME" Type="char" MaxLength="6" />
+          <Property Name="AY_F_LAST_CHG_BY" Type="char" MaxLength="70" />
+        </EntityType>
+        <EntityContainer Name="AYIZA_DBModel1StoreContainer">
+          <EntitySet Name="ApplicationType" EntityType="Self.ApplicationType" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AYIZA_DBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ApplicationType">
+          <Key>
+            <PropertyRef Name="AY_ENV_ID" />
+            <PropertyRef Name="AY_F_APPL_TYPE" />
+            <PropertyRef Name="AY_F_LANG_CODE" />
+          </Key>
+          <Property Name="AY_ENV_ID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AY_F_APPL_TYPE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AY_F_LANG_CODE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AY_F_APPL_TEXT" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+          <Property Name="AY_F_CREATE_DATE" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="AY_F_CREATE_TIME" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="AY_F_CREATED_BY" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+          <Property Name="AY_F_LAST_CHG_DATE" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="AY_F_LAST_CNG_TIME" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="AY_F_LAST_CHG_BY" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AYIZA_DBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApplicationTypes" EntityType="Self.ApplicationType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AYIZA_DBModel1StoreContainer" CdmEntityContainer="AYIZA_DBEntities2">
+          <EntitySetMapping Name="ApplicationTypes">
+            <EntityTypeMapping TypeName="AYIZA_DBModel1.ApplicationType">
+              <MappingFragment StoreEntitySet="ApplicationType">
+                <ScalarProperty Name="AY_ENV_ID" ColumnName="AY_ENV_ID" />
+                <ScalarProperty Name="AY_F_APPL_TYPE" ColumnName="AY_F_APPL_TYPE" />
+                <ScalarProperty Name="AY_F_LANG_CODE" ColumnName="AY_F_LANG_CODE" />
+                <ScalarProperty Name="AY_F_APPL_TEXT" ColumnName="AY_F_APPL_TEXT" />
+                <ScalarProperty Name="AY_F_CREATE_DATE" ColumnName="AY_F_CREATE_DATE" />
+                <ScalarProperty Name="AY_F_CREATE_TIME" ColumnName="AY_F_CREATE_TIME" />
+                <ScalarProperty Name="AY_F_CREATED_BY" ColumnName="AY_F_CREATED_BY" />
+                <ScalarProperty Name="AY_F_LAST_CHG_DATE" ColumnName="AY_F_LAST_CHG_DATE" />
+                <ScalarProperty Name="AY_F_LAST_CNG_TIME" ColumnName="AY_F_LAST_CNG_TIME" />
+                <ScalarProperty Name="AY_F_LAST_CHG_BY" ColumnName="AY_F_LAST_CHG_BY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
